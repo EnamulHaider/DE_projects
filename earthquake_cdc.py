@@ -7,3 +7,4 @@ import pandas as pd
 import plotly.express as px
 import streamlit as slt
 import cdc_tracker as cdc
+print("Hello")
