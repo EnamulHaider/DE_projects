@@ -11,3 +11,17 @@ DELETE - data that was rolled off
 
 """
 
+import argparse
+import hashlib
+import sqlite3
+from datetime import datetime,timezone
+
+import pandas as pd
+import requests
+#-----------------------------------------------------
+#Config 
+#-----------------------------------------------------
+
+FEED_URL= "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
+DB_PATH = "cdc_tracker.db"
+print("Hello")
