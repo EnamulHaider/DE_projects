@@ -197,6 +197,9 @@ def show_full_log(conn:sqlite3.Connection) -> None:
 #So importing this files never has side effets
 #-----------------------------------------------------------------------
 def main():
+    parser = argparse.ArgumentParser(describe="UGSC earthquake CDC tracker ")
+    parser.add_argument("--show-log",action="store_true",help="Print the CDC log and exit")
+    args=parser.parse_args()
     conn= sqlite3.connect(DB_PATH)
     init_db(conn)   
     previous = load_previous_snapshot(conn)
